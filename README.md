@@ -21,6 +21,12 @@ az account set -s <yourSubName>
 npx mega-linter-runner --install
 ```
 
+### Create GitHub secret for FortiDevSec
+
+```bash
+gh secret create
+```
+
 [![MegaLinter](https://github.com/robinmordasiewicz/fortigate-azure-terraform/actions/workflows/mega-linter.yml/badge.svg)](https://github.com/robinmordasiewicz/fortigate-azure-terraform/actions/workflows/mega-linter.yml)
 
 [![FortiDevSec SAST scanner](https://github.com/robinmordasiewicz/fortigate-azure-terraform/actions/workflows/sast.yml/badge.svg)](https://github.com/robinmordasiewicz/fortigate-azure-terraform/actions/workflows/sast.yml)
