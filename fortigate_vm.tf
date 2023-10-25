@@ -1,6 +1,6 @@
 resource "random_pet" "admin_username" {
   keepers = {
-    resource_group_name = data.azurerm_resource_group.AZURE_RESOURCE_GROUP.name
+    resource_group_name = azurerm_resource_group.azure_resource_group.name
   }
 }
 
@@ -57,13 +57,13 @@ resource "azurerm_network_interface" "fortigate_external_network_interface" {
     name                          = "fortigate-external-ipconfig"
     primary                       = true
     private_ip_address_allocation = "Static"
-    private_ip_address            = cidrhost(var.external-Prefix, 4)
+    private_ip_address            = cidrhost(var.external_prefix, 4)
     subnet_id                     = azurerm_subnet.external_subnet.id
   }
   ip_configuration {
     name                          = "VIP-external-ipconfig"
     private_ip_address_allocation = "Static"
-    private_ip_address            = cidrhost(var.external-Prefix, 100)
+    private_ip_address            = cidrhost(var.external_prefix, 100)
     subnet_id                     = azurerm_subnet.external_subnet.id
     public_ip_address_id          = azurerm_public_ip.vip_public_ip.id
   }
@@ -76,7 +76,7 @@ resource "azurerm_network_interface" "fortigate_dmz_network_interface" {
   ip_configuration {
     name                          = "fortigate-dmz-ipconfig"
     private_ip_address_allocation = "Static"
-    private_ip_address            = cidrhost(var.dmz-Prefix, 4)
+    private_ip_address            = cidrhost(var.dmz_prefix, 4)
     subnet_id                     = azurerm_subnet.dmz_subnet.id
   }
 }
@@ -98,7 +98,7 @@ resource "azurerm_linux_virtual_machine" "fortigate_virtual_machine" {
     #public_key = file("~/.ssh/id_rsa.pub")
   }
   boot_diagnostics {
-    storage_account_uri = azurerm_storage_account.storage-account.primary_blob_endpoint
+    storage_account_uri = azurerm_storage_account.azure_storage_account.primary_blob_endpoint
   }
   identity {
     type = "SystemAssigned"
