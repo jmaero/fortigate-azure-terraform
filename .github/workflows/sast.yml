@@ -1,5 +1,5 @@
 ---
-name: FortiDevSec SAST scanner
+name: "FortiDevSec SAST"
 
 on: # yamllint disable-line rule:truthy
   push:
@@ -23,7 +23,6 @@ jobs:
         name: "init"
         shell: bash
         run: |
-          env
           if [[ -n "${{ secrets.FORTIDASTORGID }}" && -n "${{ secrets.FORTIDASTAPPID }}"]]
           then
               echo 'action=true' >> "${GITHUB_OUTPUT}"
