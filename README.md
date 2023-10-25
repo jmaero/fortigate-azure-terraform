@@ -1,4 +1,4 @@
-# fortigate-azure-terraform
+# Azure Terraform Fortigate
 
 ## Commands Cheat Sheet
 
