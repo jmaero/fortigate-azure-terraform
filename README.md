@@ -14,3 +14,9 @@ az login -o none
 az account list --query [].name -o tsv
 az account set -s <yourSubName>
 ```
+
+### Install mega-linter
+
+```bash
+npx mega-linter-runner --install
+```
