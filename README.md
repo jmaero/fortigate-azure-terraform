@@ -27,7 +27,9 @@ npx mega-linter-runner --install
 gh secret create
 ```
 
-### Configure GitHub Code Security
+### Reference Links
+
+[Dependabot](https://docs.github.com/en/code-security/dependabot/dependabot-security-updates/configuring-dependabot-security-updates)
 
 
 [![MegaLinter](https://github.com/robinmordasiewicz/fortigate-azure-terraform/actions/workflows/mega-linter.yml/badge.svg)](https://github.com/robinmordasiewicz/fortigate-azure-terraform/actions/workflows/mega-linter.yml)
