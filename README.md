@@ -25,6 +25,7 @@ npx mega-linter-runner --install
 
 ```bash
 gh secret create
+gh secret set TFSTATE_KEY --body "${TFSTATE_KEY}" --repo $REPOSITORY_FULL_NAME
 ```
 
 ### Reference Links
