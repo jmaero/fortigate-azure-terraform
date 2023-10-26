@@ -12,12 +12,6 @@ resource "azurerm_resource_group" "azure_resource_group" {
   }
 }
 
-resource "azurerm_management_lock" "resource_group_lock" {
-  name       = "resource_group_lock"
-  scope      = azurerm_resource_group.azure_resource_group.id
-  lock_level = "CanNotDelete"
-  notes      = "Ensure that Azure Resource Group has resource lock enabled"
-}
 
 resource "azurerm_public_ip" "fortigate_public_ip" {
   name                = "fortigate_public_ip"
