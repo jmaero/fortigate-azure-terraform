@@ -1,7 +1,7 @@
 resource "azurerm_storage_account" "azure_storage_account" {
   resource_group_name             = azurerm_resource_group.azure_resource_group.name
   location                        = azurerm_resource_group.azure_resource_group.location
-  name                            = "${random_integer.random_number.result}sa"
+  name                            = "${random_integer.random_number.result}sadelete"
   account_tier                    = "Standard"
   account_replication_type        = "LRS"
   enable_https_traffic_only       = true
