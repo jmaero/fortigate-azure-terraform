@@ -29,7 +29,7 @@ resource "azurerm_private_endpoint" "private_endpoint_blob" {
   name                = "pe-blob-pep"
   location            = azurerm_resource_group.azure_resource_group.location
   resource_group_name = azurerm_resource_group.azure_resource_group.name
-  subnet_id           = var.subnet_id
+  subnet_id           = azurerm_subnet.internal_subnet.id
 
   private_service_connection {
     name                           = "psc-blob-psc"
