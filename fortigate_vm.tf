@@ -12,8 +12,8 @@ resource "azurerm_resource_group" "azure_resource_group" {
   }
 }
 
-resource "azurerm_public_ip" "fortigate-public_ip" {
-  name                = "fortigate-public_ip"
+resource "azurerm_public_ip" "fortigate_public_ip" {
+  name                = "fortigate_public_ip"
   location            = azurerm_resource_group.azure_resource_group.location
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   allocation_method   = "Dynamic"
@@ -129,8 +129,8 @@ data "azurerm_public_ip" "vip_public_ip" {
   ]
 }
 
-data "azurerm_public_ip" "fortigate-public_ip" {
-  name                = azurerm_public_ip.fortigate-public_ip.name
+data "azurerm_public_ip" "fortigate_public_ip" {
+  name                = azurerm_public_ip.fortigate_public_ip.name
   resource_group_name = azurerm_resource_group.azure_resource_group.name
   depends_on = [
     azurerm_linux_virtual_machine.fortigate_virtual_machine,
@@ -142,8 +142,8 @@ output "vip_public_ip_address" {
   description = "Public IP address"
 }
 
-output "fortigate-public_ip_address" {
-  value = data.azurerm_public_ip.fortigate-public_ip.ip_address
+output "fortigate_public_ip_address" {
+  value = data.azurerm_public_ip.fortigate_public_ip.ip_address
 }
 
 output "admin_username" {
