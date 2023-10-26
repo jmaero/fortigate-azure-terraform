@@ -138,12 +138,13 @@ data "azurerm_public_ip" "fortigate_public_ip" {
 }
 
 output "vip_public_ip_address" {
-  value       = data.azurerm_public_ip.vip_public_ip.ip_address
   description = "Public IP address"
+  value       = data.azurerm_public_ip.vip_public_ip.ip_address
 }
 
 output "fortigate_public_ip_address" {
-  value = data.azurerm_public_ip.fortigate_public_ip.ip_address
+  description = "Management IP address"
+  value       = data.azurerm_public_ip.fortigate_public_ip.ip_address
 }
 
 output "admin_username" {
