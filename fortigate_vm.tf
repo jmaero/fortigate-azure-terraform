@@ -12,7 +12,6 @@ resource "azurerm_resource_group" "azure_resource_group" {
   }
 }
 
-
 resource "azurerm_public_ip" "fortigate_public_ip" {
   name                = "fortigate_public_ip"
   location            = azurerm_resource_group.azure_resource_group.location
@@ -82,14 +81,14 @@ resource "azurerm_network_interface" "fortigate_dmz_network_interface" {
   }
 }
 
-resource "azurerm_marketplace_agreement" "fortigate" {
-  publisher = "fortinet"
-  offer     = "fortinet_fortigate-vm_v5"
-  plan      = "fortinet_fg-vm_payg_2022"
-}
+#resource "azurerm_marketplace_agreement" "fortigate" {
+#  publisher = "fortinet"
+#  offer     = "fortinet_fortigate-vm_v5"
+#  plan      = "fortinet_fg-vm_payg_2022"
+#}
 
 resource "azurerm_linux_virtual_machine" "fortigate_virtual_machine" {
-  depends_on                      = [azurerm_marketplace_agreement.fortigate]
+#  depends_on                      = [azurerm_marketplace_agreement.fortigate]
   name                            = "fortigate_virtual_machine"
   computer_name                   = "fortigate"
   admin_username                  = random_pet.admin_username.id

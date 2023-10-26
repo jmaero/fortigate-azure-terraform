@@ -18,6 +18,8 @@ az account set -s <yourSubName>
 ### GitHub cli login
 
 ```bash
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
 gh auth login
 ```
 
@@ -33,18 +35,10 @@ git clone https://github.com/owner/repositoryname
 cd repositoryname
 ```
 
-### Create configuration
+### Create configuration, and edit your variables.
 
 ```bash
 cp terraform.auto.tfvars.example terraform.auto.tfvars
-```
-
-### Create GitHub secret for FortiDevSec
-
-```bash
-cd repositoryname
-gh secret set FORTIDASTORGID --body "<fortidevsecorgidhere>"
-gh secret set FORTIDASTAPPID --body "<fortidevsecappidhere>"
 ```
 
 ### Terraform
@@ -53,6 +47,14 @@ gh secret set FORTIDASTAPPID --body "<fortidevsecappidhere>"
 terraform plan
 terraform apply -auto-aprove
 terraform destroy -auto-approve
+```
+
+### Create GitHub secret for FortiDevSec
+
+```bash
+cd repositoryname
+gh secret set FORTIDASTORGID --body "<fortidevsecorgidhere>"
+gh secret set FORTIDASTAPPID --body "<fortidevsecappidhere>"
 ```
 
 [![MegaLinter](https://github.com/robinmordasiewicz/fortigate-azure-terraform/actions/workflows/mega-linter.yml/badge.svg)](https://github.com/robinmordasiewicz/fortigate-azure-terraform/actions/workflows/mega-linter.yml)
