@@ -35,6 +35,14 @@ gh secret set FORTIDASTORGID --body "<fortidevsecorgidhere>"
 gh secret set FORTIDASTAPPID --body "<fortidevsecappidhere>"
 ```
 
+### Terraform
+
+```bash
+terraform plan
+terraform apply -auto-aprove
+terraform destroy -auto-approve
+```
+
 [![MegaLinter](https://github.com/robinmordasiewicz/fortigate-azure-terraform/actions/workflows/mega-linter.yml/badge.svg)](https://github.com/robinmordasiewicz/fortigate-azure-terraform/actions/workflows/mega-linter.yml)
 
 [![FortiDevSec SAST scanner](https://github.com/robinmordasiewicz/fortigate-azure-terraform/actions/workflows/sast.yml/badge.svg)](https://github.com/robinmordasiewicz/fortigate-azure-terraform/actions/workflows/sast.yml)
