@@ -27,6 +27,18 @@ gh auth login
 git clone https://github.com/owner/repositoryname
 ```
 
+### CD into repository folder
+
+```bash
+cd repositoryname
+```
+
+### Create configuration
+
+```bash
+cp terraform.auto.tfvars.example terraform.auto.tfvars
+```
+
 ### Create GitHub secret for FortiDevSec
 
 ```bash
